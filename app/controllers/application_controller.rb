@@ -1,5 +1,3 @@
-class CoursesController < ApplicationController
-  def index
-    @courses = Course.all
+class ApplicationController < ActionController::Base
   end
-end
+

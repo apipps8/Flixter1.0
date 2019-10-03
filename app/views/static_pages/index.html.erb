@@ -1,19 +1,31 @@
+<div class="hero">
+  <br/>
+  <div class="frosty text-center">
+    <br />
+    <h1>Share your craft.</h1>
+    <br />
+    <h2>For artists, by artists.</h2>
+    <br />
+    <%= link_to 'Learn More', courses_path, class: 'btn btn-success' %>
+    <br /><br />
+  </div>
+</div>
 <br />
 
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center">Learn something today</h1>
-  <hr />
-
-  <% @courses.each do |course| %>
-  <h2 class="text-center"><%= course.title %></h2>
-  <br />
-   <div class="row">
-  <div class="col-sm-8 col-12">
-    <%= course.description %>
+<div class="row feature text-center">
+  <div class="col-12 col-sm">
+    <h3>Collective.</h3>
+    <br />
+    <p>Join a community of like minded educator-artists who want to make this world a more crafty, beautiful place.</p>
   </div>
-  <div class="col-sm-4 col-12 text-center">
-    <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
-    </div>
+  <div class="col-12 col-sm">
+    <h3>Curated.</h3>
+    <br />
+    <p>Find the perfect, professional quality course to suit the goals of your personal practice.</p>
   </div>
-   <br class="clr" />
-<% end %>
+  <div class="col-12 col-sm">
+    <h3>Creative.</h3>
+    <br />
+    <p>Learn about artmaking methods and wisdom necessary to make your visions into reality.</p>
+  </div>
+</div>

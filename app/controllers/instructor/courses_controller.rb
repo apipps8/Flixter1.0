@@ -2,7 +2,7 @@ class Instructor::CoursesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @course = Course.all
+    @course = Course.new
   end
 
   def create
@@ -18,9 +18,29 @@ class Instructor::CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
+  def index
+    @courses = Course.all
+  end
+  
   private
 
   def course_params
     params.require(:course).permit(:title, :description, :cost)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

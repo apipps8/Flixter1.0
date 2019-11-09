@@ -1,3 +1,13 @@
+<script>
+  $(function() {
+    $('.lessons').sortable({
+      update: function( event, ui ) {
+                     alert("UpdateUrl: " + ui.item.data('update-url') + " Index: " + ui.item.index());
+      }
+    });
+  });
+</script>
+
 <br />
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @course.title %></h1>
@@ -11,9 +21,9 @@
   </div>
 
   <ul>
-    <% section.lesson.rank(:row_order).each do |lesson| %>
-      <li>
-        <%= section.title %>
+    <ul class="lessons">
+    <% @section.lesson.rank(:row_order).each do |lesson| %>
+      <li data-update-url="<%= instructor_lesson_path(lesson) %>">
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
         <br class="clr" />
       </li>

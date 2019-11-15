@@ -1,3 +1,17 @@
+<script>
+  $(function() {
+    $('.sections').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+   });
+</script> 
 <br />
 
 <div class="booyah-box col-10 offset-1">
@@ -50,9 +64,9 @@
   </div>
 
   <div class="col-12">
-    <% @course.sections.each do |section| %>
+    <% @course.sections.rank(:row_order).each do |section| %>
     <br /><br />
-      <div class="section">
+      <div class="sections">
         <h3>
           <%= section.title %>
         </h3>
